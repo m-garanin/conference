@@ -14,3 +14,9 @@ conference
 * мультиязычность (ru\eng)
 
 в качестве cms используется django-cms.
+
+
+Разработчики
+============
+* Garanin Michail
+* Grigory Fateyev (aka greg)  https://github.com/greggy
