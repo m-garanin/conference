@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+
+	<h2>{% trans 'Комментарии к' %} {{ document.get_filename }}</h2>
+
+	<ul>
+		<li><b>{% trans 'Статус' %}:</b> {{ document.get_status_display }}</li>
+		<li><b>{% trans 'Дата' %}:</b> {{ document.status_date }}</li>
+		<li><b>{% trans 'Автор' %}:</b> {{ document.status_author.user.email }}</li>
+		<li><b>{% trans 'Комментарий' %}:</b> {{ document.status_comment }}</li>
+	</ul>
+
+	{% for com in comments %}
+		<p>
+			{% trans 'автор' %}: {{ com.author.user.email }}<br />
+			{{ com.text }}
+		</p>
+	{% empty %}
+		<p>{% trans 'Нет комментариев' %}</p>
+	{% endfor %}
+
+	<form action="" method="post">
+		{% include 'form.html' %}
+	</form>
+
+{% endblock %}

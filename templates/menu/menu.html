@@ -1,0 +1,12 @@
+{% load menu_tags %}
+{% for child in children %}
+<a href="{{ child.attr.redirect_url|default:child.get_absolute_url }}"
+   class="level_{{child.menu_level}} {% if child.selected %}selected{% endif %}{% if child.ancestor %}ancestor{% endif %}{% if child.sibling %}sibling{% endif %}{% if child.descendant %}descendant{% endif %}"
+   >{{ child.get_menu_title }}
+</a>
+
+{% if child.children %}
+  {% show_menu from_level to_level extra_inactive extra_active template "" "" child %}
+{% endif %}
+
+{% endfor %}

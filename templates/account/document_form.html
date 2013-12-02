@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+
+	<h1>{% trans 'Добавление тезисов' %}</h1>
+
+	<form action="" method="post" enctype="multipart/form-data">
+		{% include "form_add.html" %}
+	</form>
+
+{% endblock %}

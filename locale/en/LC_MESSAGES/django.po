@@ -1,0 +1,408 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-01 17:01+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+
+#: app/const.py:14
+msgid "Обсуждается"
+msgstr "under assessment"
+
+#: app/const.py:15
+msgid "Отклонён"
+msgstr "declined"
+
+#: app/const.py:16
+msgid "Принят"
+msgstr "accepted"
+
+#: app/forms.py:57 app/forms.py:146
+msgid ""
+"This email address is already in use. Please supply a different email "
+"address."
+msgstr ""
+
+#: app/forms.py:70 app/forms.py:159
+msgid "You must type the same password each time"
+msgstr ""
+
+#: app/models.py:17
+msgid "Обращение"
+msgstr ""
+
+#: app/models.py:19 templates/account/document_moderate.html:31
+#: templates/account/index.html:10
+msgid "Имя"
+msgstr "Name"
+
+#: app/models.py:20
+msgid "Отчество"
+msgstr ""
+
+#: app/models.py:21
+msgid "Фамилия"
+msgstr ""
+
+#: app/models.py:23 templates/account/document_moderate.html:33
+#: templates/account/index.html:12
+msgid "Страна"
+msgstr "Country"
+
+#: app/models.py:24 templates/account/document_moderate.html:34
+#: templates/account/index.html:13
+msgid "Город"
+msgstr "City"
+
+#: app/models.py:26 templates/account/document_moderate.html:38
+#: templates/account/index.html:17
+msgid "Учёная степень и звание"
+msgstr "IRA affiliation"
+
+#: app/models.py:27 templates/account/document_moderate.html:39
+#: templates/account/index.html:18
+msgid "Место работы"
+msgstr "Place of work"
+
+#: app/models.py:28 templates/account/document_moderate.html:40
+#: templates/account/index.html:19
+msgid "Должность"
+msgstr "Position"
+
+#: app/models.py:30 templates/account/document_moderate.html:41
+#: templates/account/index.html:20
+msgid "Моб.телефоны"
+msgstr "Mobile phone"
+
+#: app/models.py:58 templates/account/index.html:37
+msgid "Наименование тезисов"
+msgstr "The Title of the Abstract"
+
+#: app/models.py:59 templates/account/document_moderate.html:13
+#: templates/account/index.html:39
+msgid "Файл"
+msgstr "File"
+
+#: app/models.py:60 templates/account/document_moderate.html:12
+#: templates/account/index.html:38
+msgid "Описание"
+msgstr "Description"
+
+#: app/models.py:62 app/views.py:56
+#: templates/account/document_moderate.html:10
+msgid "Секция"
+msgstr "Section"
+
+#: app/models.py:64 app/models.py:99
+msgid "Статус документа"
+msgstr "Document Status"
+
+#: app/models.py:67 app/models.py:101
+msgid "Время смены статуса"
+msgstr "The time of the status modification"
+
+#: app/models.py:68 app/models.py:102
+msgid "Комментарий к статусу"
+msgstr ""
+
+#: app/models.py:69 app/models.py:103
+msgid "Автор статуса"
+msgstr ""
+
+#: app/models.py:117
+msgid "Текст комментария"
+msgstr ""
+
+#: app/models.py:129 app/models.py:142
+msgid "Название (русское)"
+msgstr ""
+
+#: app/models.py:130 app/models.py:143
+msgid "Название (английское)"
+msgstr ""
+
+#: app/models.py:131 app/models.py:144
+msgid "Приоритет"
+msgstr ""
+
+#: templates/base.html:19
+msgid ""
+" \n"
+"\tВторая международная <br/>\n"
+"\tнаучно-практическая конференция <br/>\n"
+"\t«Чтение и грамотность в образовании и культуре»<br/>\n"
+"\t(по итогам Десятилетия грамотности ООН «Грамотность для всех»)<br/><br/>\n"
+"\t"
+msgstr ""
+" \n"
+"The Second International Conference <br/>\n"
+"«Reading and Literacy in Education and Culture»<br/>\n"
+"(On the Outcomes of the United Nations Literacy Decade <br/>«Education for All»)<br/>\n"
+"\t"
+
+
+
+#: templates/base.html:63
+msgid "Вход"
+msgstr "Login"
+
+#: templates/base.html:64
+msgid "Регистрация"
+msgstr "Registration"
+
+#: templates/base.html:65
+msgid "Забыли пароль?"
+msgstr "Forgot your password?"
+
+#: templates/base.html:67
+msgid "Выход"
+msgstr "Logout"
+
+#: templates/base.html:68 templates/account/index.html:6
+msgid "Личный кабинет"
+msgstr "Personal Profile"
+
+#: templates/experts_menu.html:2
+msgid "Обсуждаемые тезисы"
+msgstr ""
+
+#: templates/experts_menu.html:3
+msgid "Принятые тезисы"
+msgstr ""
+
+#: templates/experts_menu.html:4
+msgid "Отклонённые тезисы"
+msgstr ""
+
+#: templates/experts_menu.html:5
+msgid "Все участники"
+msgstr ""
+
+#: templates/experts_menu.html:6
+msgid "Сводка по мероприятиям"
+msgstr ""
+
+#: templates/form.html:5
+msgid "Пожалуйста, исправьте ошибки ниже."
+msgstr "Please correct the errors below."
+
+#: templates/form.html:30
+msgid "Отмеченые поля обязательны для заполнения!"
+msgstr "Fileds marked with * are mandatory"
+
+#: templates/form_add.html:5
+msgid "Добавить"
+msgstr "Submit"
+
+#: templates/form_reg.html:5
+msgid "Продолжить..."
+msgstr "Continue"
+
+#: templates/account/accounts_list.html:6
+msgid "Участники"
+msgstr ""
+
+#: templates/account/comments_list.html:6
+msgid "Комментарии к"
+msgstr ""
+
+#: templates/account/comments_list.html:9
+#: templates/account/document_moderate.html:14 templates/account/index.html:40
+msgid "Статус"
+msgstr "State"
+
+#: templates/account/comments_list.html:10
+msgid "Дата"
+msgstr ""
+
+#: templates/account/comments_list.html:11
+msgid "Автор"
+msgstr ""
+
+#: templates/account/comments_list.html:12
+msgid "Комментарий"
+msgstr ""
+
+#: templates/account/comments_list.html:17
+msgid "автор"
+msgstr ""
+
+#: templates/account/comments_list.html:21
+msgid "Нет комментариев"
+msgstr ""
+
+#: templates/account/document_form.html:6
+msgid "Добавление тезисов"
+msgstr "Submit an abstract"
+
+#: templates/account/document_moderate.html:8 templates/account/index.html:35
+msgid "Номер"
+msgstr "Number"
+
+#: templates/account/document_moderate.html:9 templates/account/index.html:36
+msgid "Дата подачи"
+msgstr "Submission Date"
+
+#: templates/account/document_moderate.html:11
+msgid "Наименование"
+msgstr ""
+
+#: templates/account/index.html:26
+msgid "Добавить тезисы"
+msgstr "Submit an abstract"
+
+#: templates/account/index.html:30
+msgid "Ваши тезисы"
+msgstr "Your abstract"
+
+#: templates/account/index.html:47
+msgid "Опрос по мероприятиям"
+msgstr "Choose an event from the list below"
+
+#: templates/account/index.html:48
+msgid "Здесь Вы можете отметить какие мероприятия Вы хотели бы посетить"
+msgstr "&nbsp;"
+
+#: templates/account/index.html:53 templates/account/tours_list.html:12
+msgid "Название"
+msgstr "Title"
+
+#: templates/account/tours_list.html:6
+msgid "Мероприятия"
+msgstr ""
+
+#: templates/account/tours_list.html:13
+msgid "Кол-во участников"
+msgstr ""
+
+#: templates/registration/activate.html:15
+msgid ""
+"Ваш аккаунт успешно активирован.<br />Вы можете войти на сайт, используя "
+"адрес электронной почты и пароль, которые Вы указали при регистрации."
+msgstr ""
+"Your Account has been activated. You can log-in with your e-mail address and password you used to register for the conference"
+
+ 
+#: templates/registration/activation_email.txt:2
+msgid "Добрый день!"
+msgstr "Hello!"
+
+#: templates/registration/activation_email.txt:4
+msgid "Ссылка для активации аккаунта"
+msgstr "Link for account activation"
+
+#: templates/registration/activation_email.txt:7
+msgid "Помните, что активация будет доступна в течение"
+msgstr "Remember, the activation will be available during"
+
+#: templates/registration/activation_email.txt:7
+msgid "дней"
+msgstr "days"
+
+#: templates/registration/login.html:7
+msgid "Вход в личный кабинет"
+msgstr "Login"
+
+#: templates/registration/login.html:10
+msgid ""
+"\n"
+"    Указанные email\\пароль не подходят. Попробуйте ещё раз.\n"
+"    "
+msgstr ""
+"\n"
+"    Please enter a correct email and password. Note that both fields are "
+"case-sensitive.\n"
+"    "
+
+#: templates/registration/login.html:24
+msgid "Пароль"
+msgstr "Password"
+
+#: templates/registration/login.html:33
+#: templates/registration/password_reset_complete.html:10
+msgid "Войти"
+msgstr "Login"
+
+#: templates/registration/password_reset_complete.html:5
+msgid "Восстановление пароля завершено"
+msgstr "Password reset complete"
+
+#: templates/registration/password_reset_complete.html:7
+msgid "Ваш пароль был сохранён. Теперь вы можете войти."
+msgstr "Your password has been saved. Now you can log-in."
+
+#: templates/registration/password_reset_confirm.html:5
+msgid "Введите новый пароль"
+msgstr "Enter a new password"
+
+#: templates/registration/password_reset_confirm.html:7
+msgid ""
+"Пожалуйста, введите новый пароль дважды, чтобы мы могли убедиться в "
+"правильности написания."
+msgstr "Please enter your password twice to confirm it"
+
+#: templates/registration/password_reset_done.html:5
+msgid "Пароль успешно восстановлен"
+msgstr "Password reset successful"
+
+#: templates/registration/password_reset_done.html:7
+msgid ""
+"\n"
+"Мы отправили инструкцию по восстановлению пароля на адрес электронной почты, "
+"который вы указали. Вы должны ее вскоре получить.\n"
+msgstr ""
+"\n"
+"The instruction for password reset has been sent. You will recieve it soon\n"
+
+#: templates/registration/password_reset_form.html:5
+msgid "Восстановление пароля"
+msgstr "Password reset"
+
+#: templates/registration/password_reset_form.html:7
+msgid ""
+"\n"
+"Забыли пароль? Введите свой адрес электронной почты ниже, и мы вышлем\n"
+"вам инструкцию, как установить новый пароль.\n"
+msgstr ""
+"\n"
+"Have your forgotten your password. Please enter your email address below for instructions.\n"
+
+#: templates/registration/registration_complete.html:13
+msgid ""
+"На Ваш почтовый адрес отослано письмо, содержащее ссылку для подтверждения "
+"регистрации."
+msgstr "A confirmation e-mail has been sent to you to complete the registration "
+
+
+#: templates/registration/registration_form.html:5
+msgid "РЕГИСТРАЦИЯ"
+msgstr "REGISTRATION"
+
+#: templates/registration/registration_form.html:7
+msgid ""
+"\n"
+"\tУказанные персональные данные (ФИО, должность и место работы, № мобильного "
+"телефона, адрес электронной почты)\n"
+"\tявляются общедоступными, могут обрабатываться на сайте конференции для "
+"использования в материалах конференции\n"
+"\t(программе секционных выступлений, сборнике тезисов, уведомлениях "
+"Оргкомитета).\n"
+"\t"
+msgstr ""
+"\n"
+"My personal data (first name, last name, work place, position, e-mail, "
+"mobile phone) can be processed for the purposes of the Conference and used "
+"in the Conference Programme, Conference Organizing Committee notifications, "
+"and other Conference materials. Making it public is done with my consent."

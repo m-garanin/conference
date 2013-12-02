@@ -1,0 +1,46 @@
+{% load i18n %}
+{% csrf_token %}
+{% if form.errors %}
+<div class="error">
+{% trans 'Пожалуйста, исправьте ошибки ниже.' %} 
+{% if form.non_field_errors %}
+  {{ form.non_field_errors }}
+{% endif %}
+</div>
+{% endif %}
+
+<table>
+{% for field in form %}
+  <tr>
+    <th>{{ field.label_tag }} {% if field.field.required %}<span class="required_field">*</span>{% endif %}</th>
+    <td>{{ field }}
+      {% if field.errors %}
+         <p>{{ field.errors }}</p>
+      {% endif %}
+    </td>
+    <td style="width:200px;padding:0;margin:0;">
+      {% if field.help_text %}
+       <p>{{ field.help_text }}</p>
+      {% endif %}
+    </td>
+  </tr>
+{% endfor %}
+<tr>
+	<td colspan="2" align="right">
+		<span class="required_field">*</span> <span class="notice_note">{% trans 'Отмеченые поля обязательны для заполнения!' %}</span>
+	</td>
+</tr>
+<tr>
+  <th></th>
+  <td>
+     <button type="submit" class="button">
+    {% block button %}
+       OK
+    {% endblock %}
+     </button>
+
+  </td>
+  <td></td>
+</tr>
+
+</table>

@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+
+  <h1>{% trans 'Личный кабинет' %}</h1>
+    <table>
+      <tr>
+	<td>
+	  <b>{% trans 'Имя' %}</b>:&nbsp;{{ account.title }} <br/>
+	  <b>Email</b>:&nbsp;{{ account.user.email }} <br/>
+	  <b>{% trans 'Страна' %}</b>:&nbsp;{{ account.country }} <br/>
+	  <b>{% trans 'Город' %}</b>:&nbsp;{{ account.city }} <br/>
+	</td>
+	<td width="80px;"></td>
+	<td>
+	  <b>{% trans 'Учёная степень и звание' %}</b>:&nbsp;{{ account.degree }} <br/>
+	  <b>{% trans 'Место работы' %}</b>:&nbsp;{{ account.work_place }} <br/>
+	  <b>{% trans 'Должность' %}</b>:&nbsp;{{ account.post }} <br/>
+	  <b>{% trans 'Моб.телефоны' %}</b>:&nbsp;{{ account.contact }} <br/>
+	</td>
+      </tr>
+    </table>
+
+  <div align="right">
+    <a href="{% url document_add %}">{% trans 'Добавить тезисы' %}</a>
+  </div>
+
+  {% if documents %}
+  <h2>{% trans 'Ваши тезисы' %}</h2>
+  {% endif %}
+
+  {% for doc in documents %}
+  <div>
+      <b>{% trans 'Номер' %}</b>: {{ doc.id }} <br/>
+      <b>{% trans 'Дата подачи' %}</b>: {{ doc.date_create }} <br/>
+      <b>{% trans 'Наименование тезисов' %}</b>: {{ doc.title}} <br/>
+      <b>{% trans 'Описание' %}</b>: {{ doc.desc }} <br/>
+      <b>{% trans 'Файл' %}</b>: <a href="/storage/{{ doc.filename }}">{{ doc.get_filename }}</a> <br/>
+      <b>{% trans 'Статус' %}</b>: <b style="text-transform:uppercase;">{{ doc.get_status_display }} </b>
+	 {% if doc.status_comment %},{{ doc.status_comment }}{% endif %} <br/>
+  </div>
+  <hr/>
+  {% endfor %}
+  
+  <div style="margin-top:50px;"></div>
+  <h2>{% trans 'Опрос по мероприятиям' %}</h2>
+  {% blocktrans %}Здесь Вы можете отметить какие мероприятия Вы хотели бы посетить{% endblocktrans %}
+  <br/><br/>
+  <table class="object_list">
+    <thead>
+    <tr>
+      <th>{% trans 'Название' %}</th>
+      <th width="30px;"></th>
+    </tr>
+    </thead>
+    {% for tour in  tours %}
+    <tr class="{% cycle 'row1' 'row2' %}">
+      <td>{{ tour.title }}</td>
+      <td align="center"> 
+	<a href="{% url tour_toggle tour.id %}" class="my_tour">  
+	  {% if tour.my_tour %} V {% endif %}
+	</a>
+      </td>
+    </tr>
+    {% endfor %}
+
+  </table>
+  <br/>
+  
+
+	
+{% endblock %}

@@ -1,0 +1,6 @@
+{% load i18n %}
+<a href="{% url documents_disquss %}">{% trans 'Обсуждаемые тезисы' %} ({{ disquss }})</a>
+<a href="{% url documents_accept %}">{% trans 'Принятые тезисы' %} ({{ accept }})</a>
+<a href="{% url documents_reject %}">{% trans 'Отклонённые тезисы' %} ({{ reject }})</a>
+<a href="{% url accounts_list %}">{% trans 'Все участники' %} ({{ account_counts }})</a>
+<a href="{% url tours_info %}">{% trans 'Сводка по мероприятиям' %}</a>

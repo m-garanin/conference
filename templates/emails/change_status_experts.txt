@@ -1,0 +1,9 @@
+Добрый день!
+
+Тезисам № {{ document.id }} {{ url }}
+присвоен статус: {{ document.get_status_display }}. Статус сменил: {{ document.status_author.title }}
+{% if document.status_comment %}
+Пояснение эксперта: {{ document.status_comment }}
+{% endif %}
+
+--

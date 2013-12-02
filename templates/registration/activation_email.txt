@@ -1,0 +1,9 @@
+{% load i18n %}
+{% trans 'Добрый день!' %}
+
+{% trans 'Ссылка для активации аккаунта' %}:
+http://{{ site }}{% url registration_activate activation_key %}
+
+{% trans 'Помните, что активация будет доступна в течение' %} {{ expiration_days }} {% trans 'дней' %}.
+-- 
+

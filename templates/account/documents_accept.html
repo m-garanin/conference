@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load tags %}
+
+{% block content %}
+<h1>Принятые тезисы</h1>
+	{% filter_form section %}
+
+  <table class="object_list">
+
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Дата</th>
+      <th>Название</th>
+      <th></th>
+    </tr>
+    </thead>
+    {% for doc in  object_list %}
+    <tr class="{% cycle 'row1' 'row2' %}">
+      <td>{{ doc.id }}</td>
+      <td>
+	{{ doc.date_create }}	
+      </td>
+      <td>{{ doc.title }}</td>
+      <td><a href="{% url document_moderate doc.id %}">обсудить</a></td>
+    </tr>
+    {% endfor %}
+      
+
+
+  </table>
+
+{% endblock %}

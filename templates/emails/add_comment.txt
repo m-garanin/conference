@@ -1,0 +1,6 @@
+Добрый день!
+
+Для тезисов № {{ comment.document.id }} {{ url }}
+был добавлен комментарий. Автор: {{ comment.author.title }}
+
+--

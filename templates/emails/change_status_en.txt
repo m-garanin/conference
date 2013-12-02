@@ -1,0 +1,9 @@
+Hello!
+
+Your thesis' #{{ document.id }} status was changed to {{ document.get_status_display }}.
+{% if document.status_comment %}
+Expert's comment:: {{ document.status_comment }}
+{% endif %}
+
+
+--

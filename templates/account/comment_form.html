@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Добавление комментария к тезисам N {{ document.id }}</h1>
+<form action="" method="post" enctype="multipart/form-data">
+  {% include "form.html" %}
+</form>
+<div class="notice">
+  Комментарий будет виден только экспертам.
+</div>
+{% endblock %}

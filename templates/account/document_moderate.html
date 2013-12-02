@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+  <h1>Обсуждение тезисов</h1>
+
+  <div>
+      <b>{% trans 'Номер' %}</b>: {{ document.id }} <br/>
+      <b>{% trans 'Дата подачи' %}</b>: {{ document.date_create }} <br/>
+      <b>{% trans 'Секция' %}</b>: {{ document.section.ru_title}} <br/>
+      <b>{% trans 'Наименование' %}</b>: {{ document.title}} <br/>
+      <b>{% trans 'Описание' %}</b>: {{ document.desc }} <br/>
+      <b>{% trans 'Файл' %}</b>: <a href="/storage/{{ document.filename|urlencode }}">{{ document.get_filename }}</a> <br/>
+      <b>{% trans 'Статус' %}</b>: 
+         <b style="text-transform:uppercase;">{{ document.get_status_display }} </b>&nbsp;&nbsp;&nbsp;
+	 {% if document.status_author != document.author %}
+	   : {{ document.status_author.title }}
+	 {% endif %}
+	 <i>{% if document.status_comment %}-{{ document.status_comment}}{% endif %} 
+	 </i>
+	 
+	 <br/>
+  </div>
+  
+  {% if perms.app.superexpert %}	
+  <hr/>
+    <h2>Автор тезисов</h2>
+    <table>
+      <tr>
+	<td>
+	  <b>{% trans 'Имя' %}</b>:&nbsp;{{ author.title }} <br/>
+	  <b>Email</b>:&nbsp;{{ author.user.email }} <br/>
+	  <b>{% trans 'Страна' %}</b>:&nbsp;{{ author.country }} <br/>
+	  <b>{% trans 'Город' %}</b>:&nbsp;{{ author.city }} <br/>
+	</td>
+	<td width="80px;"></td>
+	<td>
+	  <b>{% trans 'Учёная степень и звание' %}</b>:&nbsp;{{ author.degree }} <br/>
+	  <b>{% trans 'Место работы' %}</b>:&nbsp;{{ author.work_place }} <br/>
+	  <b>{% trans 'Должность' %}</b>:&nbsp;{{ author.post }} <br/>
+	  <b>{% trans 'Моб.телефоны' %}</b>:&nbsp;{{ author.contact }} <br/>
+	</td>
+      </tr>
+    </table>
+    {% endif %}
+
+    <hr/>
+
+    <h2>Комментарии экспертов</h2>    
+    {% for com in comments %}
+    <div style="border-bottom:1px dotted gray;">
+      <b>{{ com.author.title }}</b>({{ com.date_create }}):&nbsp;&nbsp; 
+      <i>{{ com.text }}</i>
+    </div>
+    {% empty %}
+    нет комментариев
+    {% endfor %}
+    
+    <hr/>
+    <div>
+      <a href="{% url document_add_comment document.id %}">Добавить комментарий</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+      <a href="{% url document_accept document.id %}">ПРИНЯТЬ ТЕЗИС</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+      <a href="{% url document_reject document.id %}">ОТКЛОНИТЬ</a>
+    </div>
+    
+{% endblock %}

@@ -1,0 +1,19 @@
+<form action="{% url set_filter %}" method="post">{% csrf_token %}
+<input type="hidden" name="next" value="{{ request.path }}" />
+<table>
+	<tr>
+		<td>Фильтр: </td>
+		<td>
+			<select name="section">
+				<option value="0">Все секции</option>
+				{% for sec in sections %}
+				<option value="{{ sec.id }}"{% if sec.id|stringformat:"s" == section %} selected{% endif %}>{{ sec.ru_title|truncatewords:5 }}</option>
+				{% endfor %}
+			</select>
+		</td>
+		<td>
+			<button type="submit" class="button">Применить</button>
+		</td>
+	</tr>
+</table>
+</form>

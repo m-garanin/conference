@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+<div>
+
+<h1>{% trans 'Вход в личный кабинет' %}</h1>
+{% if form.errors %}
+  <div class="error">
+    {% blocktrans %}
+    Указанные email\пароль не подходят. Попробуйте ещё раз.
+    {% endblocktrans %}
+  </div>
+{% endif %}
+
+<form method="post" style="margin-top:50px;margin-bottom:50px;" action="{% url django.contrib.auth.views.login %}">
+{% csrf_token %}
+<table>
+<tr>
+    <th valign="top">Email:</th>
+    <td valign="top"><input type="text" name="username" style="width:20em;"/></td>
+</tr>
+<tr>
+    <th valign="top">{% trans 'Пароль' %}:</th>
+    <td valign="top"><input type="password" name="password" style="width:20em;"/></td>
+</tr>
+
+<tr>
+  <th></th>
+  <td>
+     <button type="submit" class="button" style="float:right;">
+    {% block button %}
+       {% trans 'Войти' %}
+    {% endblock %}
+     </button>
+     <input type="hidden" name="next" value="/account/" />
+  </td>
+</tr>
+
+</table>
+
+</form>
+
+</div>
+{% endblock %}

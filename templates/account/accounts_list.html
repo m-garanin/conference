@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+
+	<h2>{% trans 'Участники' %}</h2>
+
+	<table class="object_list">
+	  <thead>
+	    <tr>
+	      <th>N</th>
+	      <th>ID</th>
+	      <th>Участник</th>
+	      <th>Страна\Город</th>
+	    </tr>
+	  </thead>
+
+	  {% for acc in object_list %}
+	  <tr class="{% cycle 'row1' 'row2' %}">
+	    <td>{{ forloop.counter }}</td>
+	    <td>id:{{ acc.id }}</td>
+	    <td>{{ acc.title }}</td>
+	    <td>{{ acc.country }} / {{ acc.city }}</td>
+	  </tr>
+	  {% endfor %}
+	  
+	</table>
+
+
+{% endblock %}

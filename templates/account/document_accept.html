@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Принятие тезисов N {{ document.id }}</h1>
+<div align="right">
+  <a  href="{% url document_moderate document.id %}">вернуться к обсуждению &raquo;</a>
+</div>
+
+<form action="" method="post" enctype="multipart/form-data">
+  {% include "form_accept.html" %}
+</form>
+
+<div class="notice">ВНИМАНИЕ: Этот комментарий, без указания кто его оставил,
+  будет виден автору тезисов.
+</div>
+{% endblock %}

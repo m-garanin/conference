@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+				"http://www.w3.org/TR/html4/loose.dtd">
+{% load cms_tags sekizai_tags menu_tags i18n tags %}
+<html>
+<head>
+  <title></title>
+  {% render_block "css" %}
+  {% render_block "js" %}
+
+  <link rel="stylesheet" type="text/css" href="/site_media/site.css?v=8" />
+  <link rel="stylesheet" type="text/css" href="/site_media/form.css" />  
+
+</head>
+<body>
+  <table align="center" style="width:1090px;position:relative;background:#FFFFFF;" >
+    <tr>
+      <td colspan="2" id="header">
+	<a id="logo" href="/"></a>
+	<div class="maintitle">{% if LANGUAGE_CODE == 'en' %} 
+	  International Conference <br/>
+	  “Reading and Literacy in Education and Culture”<br/><br/>
+	  {% else %}
+	Международная научно-практическая конференция <br/>
+	  Русской ассоциации чтения <br/>
+	«Чтение и грамотность в образовании и культуре»<br/>
+	  </br>
+	{% endif %}
+	</div>
+	<div id="contacts">
+	  <a href="mailto:rusreadorg@gmail.com" class="email"></a>
+	  <!--<a class="phone"></a>-->
+	</div>
+      </td>
+    </tr>
+    <tr>
+      <td style="width:200px;padding-left:30px;" valign="top">
+	<div class="lang">
+	  {% if LANGUAGE_CODE == 'ru' %}
+	    <a class="ru_on"></a>
+	    <a class="en_off" href="{% url set_language %}?lang=en&next=/"></a>
+	  {% else %}
+	    <a class="ru_off" href="{% url set_language %}?lang=ru&next=/"></a>
+	    <a class="en_on"></a>
+	  {% endif %}
+	</div>
+	<div style="clear:both;"></div>
+	<div class="menu" style="margin-top: 10px;">
+	  {% show_menu 0 100 0 100 %}
+	</div>
+	<br/><br/>
+	
+	{% if perms.app.expert %}	
+	<b>МЕНЮ ЭКСПЕРТА:</b>
+	<div class="menu2">
+	  {% experts_menu %}
+	</div>
+	{% endif %}
+
+      </td>
+      
+      <td valign="top" style="width:890px;">
+	<div style="height:30px;">
+	  <div align="right">
+
+	    {% if not user.is_authenticated %}
+	      <a href="{% url auth_login %}">{% trans 'Вход' %}</a>
+	      | <a href="{% url registration_register %}{{LANGUAGE_CODE}}/">{% trans 'Регистрация' %}</a>
+	      | <a href="{% url auth_password_reset %}">{% trans 'Забыли пароль?' %}</a>
+	    {% else %}
+	      <a href="{% url auth_logout %}">{% trans 'Выход' %}</a>
+	      | <a href="{% url account %}">{% trans 'Личный кабинет' %}</a>
+	    {% endif %}
+
+
+	  </div>
+	</div>
+	<div class="content" style="padding-left:30px;padding-right:10px;">
+	{% block content %}{% endblock %}
+	</div>
+      </td>      
+    </tr>
+  </table>
+
+
+</body>
+</html>
